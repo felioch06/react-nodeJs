@@ -35,41 +35,41 @@ function OrderDetailCard() {
                     <label htmlFor="" className="fw-bold">
                       Package min
                     </label>
-                    <p>{order.packPromiseMin}</p>
+                    <p>{order.packPromiseMin || 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Package max
                     </label>
-                    <p>{order.packPromiseMax}</p>
+                    <p>{order.packPromiseMax || 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Shipping min
                     </label>
-                    <p>{order.shipPromiseMin}</p>
+                    <p>{order.shipPromiseMin || 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Shipping max
                     </label>
-                    <p>{order.shipPromiseMax}</p>
+                    <p>{order.shipPromiseMax || 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Delivery min
                     </label>
-                    <p>{order.deliveryPromiseMin}</p>
+                    <p>{order.deliveryPromiseMin || 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Delivery max
                     </label>
-                    <p>{order.deliveryOromiseMax}</p>
+                    <p>{order.deliveryOromiseMax || 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Ready pickup min
                     </label>
-                    <p>{order.readyPickupPromiseMin}</p>
+                    <p>{order.readyPickupPromiseMin || 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Ready pickup max
                     </label>
-                    <p>{order.readyPickupPromiseMax}</p>
+                    <p>{order.readyPickupPromiseMax || 'Without date'}</p>
                   </div>
                 </div>
               </div>

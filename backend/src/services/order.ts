@@ -89,10 +89,10 @@ export default class OrderService {
 
       //get next 10 bussiness days
       while (nextBussinessDays.length <= 9) {
-        let pepito = offDays.data.find(
+        let findDays = offDays.data.find(
           (noBusiness: any) => noBusiness == dateInit.format("YYYY-MM-DD")
         );
-        if (!pepito) {
+        if (!findDays) {
           nextBussinessDays.push(dateInit.format("YYYY-MM-DD"));
         }
         dateInit.add(1, "days");
@@ -274,7 +274,6 @@ export default class OrderService {
           });
         }
       } else {
-        console.log("no se pudo");
         return res.status(200).json({
           status: false,
           code: 200,
