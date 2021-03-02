@@ -101,6 +101,14 @@ function FormOrder() {
           <div className="card-body">
             <form>
               <div className="row">
+                <div className="col-md-8">
+                  <h2 className="fw-bold">Order Information</h2>
+                </div>
+                <div className="col-md-4">
+                  <h2 className="fw-bold">Line items</h2>
+                </div>
+              </div>
+              <div className="row">
                 <div className="col-md-4">
                   <div className="mb-1">
                     <label className="form-label">Seller store</label>
@@ -274,10 +282,10 @@ function FormOrder() {
 
                           <div className="card mt-4" key={index}>
                             <div className="card-body py-1">
-                              <p className="m-0 fw-bold">{r.productName}</p>
+                              <p className="m-0 fw-bold">Name: {r.productName}</p>
                               <div className="d-flex justify-content-between">
-                                <span>Peso: {r.productWeight} Kg</span>
-                                <span>{r.quantity}</span>
+                                <span>Weight: {r.productWeight} Kg</span>
+                                <span>Quantity: {r.quantity}</span>
                               </div>
                             </div>
                           </div>

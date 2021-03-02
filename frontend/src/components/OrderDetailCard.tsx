@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./../assets/css/style.css";
 import { Link } from "react-router-dom";
 import { Order } from "../models/order";
+import moment from 'moment';
+
 
 function OrderDetailCard() {
   const [order, setOrder] = useState<Order>({});
@@ -35,41 +37,41 @@ function OrderDetailCard() {
                     <label htmlFor="" className="fw-bold">
                       Package min
                     </label>
-                    <p>{order.packPromiseMin || 'Without date'}</p>
+                    <p>{ order.packPromiseMin? moment(order.packPromiseMin).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Package max
                     </label>
-                    <p>{order.packPromiseMax || 'Without date'}</p>
+                    <p>{ order.packPromiseMax? moment(order.packPromiseMax).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Shipping min
                     </label>
-                    <p>{order.shipPromiseMin || 'Without date'}</p>
+                    <p>{ order.shipPromiseMin? moment(order.shipPromiseMin).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Shipping max
                     </label>
-                    <p>{order.shipPromiseMax || 'Without date'}</p>
+                    <p>{ order.shipPromiseMax? moment(order.shipPromiseMax).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Delivery min
                     </label>
-                    <p>{order.deliveryPromiseMin || 'Without date'}</p>
+                    <p>{ order.deliveryPromiseMin? moment(order.deliveryPromiseMin).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Delivery max
                     </label>
-                    <p>{order.deliveryOromiseMax || 'Without date'}</p>
+                    <p>{ order.deliveryOromiseMax? moment(order.deliveryOromiseMax).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="" className="fw-bold">
                       Ready pickup min
                     </label>
-                    <p>{order.readyPickupPromiseMin || 'Without date'}</p>
+                    <p>{ order.readyPickupPromiseMin? moment(order.readyPickupPromiseMin).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                     <label htmlFor="" className="fw-bold">
                       Ready pickup max
                     </label>
-                    <p>{order.readyPickupPromiseMax || 'Without date'}</p>
+                    <p>{ order.readyPickupPromiseMax? moment(order.readyPickupPromiseMax).utcOffset(-300).format('MMM DD [at] HH:mm') : 'Without date'}</p>
                   </div>
                 </div>
               </div>
@@ -138,12 +140,16 @@ function OrderDetailCard() {
                   lineItems.map((res:any, index)=>{
                     return(
                       <div key={index}>
+                        <div className="card mt-4" key={index}>
+                            <div className="card-body py-1">
                         <label htmlFor="" className="fw-bold">
-                          {res.productName}
+                          Name: {res.productName}
                         </label>
                         <div className="d-flex justify-content-between">
-                          <p>{res.productWeight}</p>
-                          <span>{res.quantity}</span>
+                          <p>Weight: {res.productWeight} Kg</p>
+                          <span>Quantity: {res.quantity}</span>
+                        </div>
+                        </div>
                         </div>
                       </div>
                     )
